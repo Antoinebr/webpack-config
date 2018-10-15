@@ -59,7 +59,9 @@ const config = {
                 exclude: /node_modules/,
                 loader: 'babel-loader',
                 query: {
-                    presets: ["env", "stage-0"]
+                    // it's important to set modules: false
+                    // otherwise ES2017 import / export are converted to require() (common js syntax)
+                    presets: [ ["env", { modules: false } ], "stage-0"] 
                 }
             },
 

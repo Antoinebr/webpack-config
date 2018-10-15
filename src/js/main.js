@@ -1,21 +1,20 @@
 import css from '@css/app.scss'
 import yop from '@css/yop.css'
 
+import {
+	lol
+} from './lol.js';
 
-let test = () => {
 
-    console.log('yiiii');
+console.log(lol())
+
+
+function get5() {
+	return new Promise((resolve, reject) => resolve(5));
 }
 
-test();
 
-
-function get5(){
-	return new Promise( (resolve, reject) => resolve(5) );
-}
-
-
-( async() => {
+(async () => {
 
 	let resp = await get5();
 
@@ -24,7 +23,7 @@ function get5(){
 })();
 
 
-document.querySelector('button').addEventListener('click', function(e){
+document.querySelector('button').addEventListener('click', function (e) {
 
 	e.preventDefault();
 
@@ -39,7 +38,3 @@ document.querySelector('button').addEventListener('click', function(e){
 	});
 
 });
-
-
-
-
