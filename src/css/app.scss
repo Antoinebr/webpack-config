@@ -1,0 +1,98 @@
+@font-face {
+    font-family: 'Pokemon';
+    src: url('../Pokemon-Classic.ttf') format('truetype');
+    font-style: normal;
+}
+
+
+
+
+
+body {
+    padding: 2%;
+    background: url('./pattern.svg');
+    font-family: sans-serif
+}
+
+.container {
+    width: 1200px;
+    max-width: 90%;
+    display: block;
+    margin: auto;
+}
+
+button {
+    width: 80%;
+    max-width: 300px;
+    height: 50px;
+    line-height: 50px;
+    background-color: #4EAAC6;
+    font-size: 15px;
+    color: #FFF;
+}
+
+
+.txt-Center {
+    text-align: center;
+}
+
+.display-block{
+    margin: auto;
+    display: block;
+}
+
+
+.cartige {
+    h2 {
+        color: rgb(11, 1, 37);
+        font-family: 'Pokemon';
+
+        b {
+            font-weight: 500;
+            font-size: 40px;
+        }
+    }
+}
+
+
+.police {
+
+    #meh {
+        width: 400px;
+        display: block;
+        margin: auto;
+    }
+
+    #arm-right {
+        transform-origin: top left;
+        transform-box: fill-box;
+        animation: armMoveR 2s infinite;
+    }
+
+    #arm-left {
+        transform-origin: top right;
+        transform-box: fill-box;
+        animation: armMoveL 2s infinite;
+    }
+
+    @keyframes armMoveL {
+        0% {
+            transform: rotate(0deg)
+        }
+
+        50% {
+            transform: rotate(40deg)
+        }
+    }
+
+
+    @keyframes armMoveR {
+        0% {
+            transform: rotate(0deg)
+        }
+
+        50% {
+            transform: rotate(-40deg)
+        }
+    }
+}
