@@ -4,6 +4,12 @@ This config is still WIP but it's a good start for front-end dev.
 
 ## How to use 
 
+###  Install the dependencies 
+ ```npm install```
+
+
+### Use the project's scaffolding
+
 The ```css``` should co in ```src/css```
 
 The ```js``` should co in ```src/js```

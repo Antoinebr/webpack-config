@@ -5,6 +5,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ManifestPlugin = require('webpack-manifest-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
 
 const config = {
@@ -233,6 +234,8 @@ if (!dev) {
 
     // remove the dist folder at build 
     config.plugins.push(new CleanWebpackPlugin('dist', {}));
+
+    config.plugins.push(new OptimizeCSSAssetsPlugin({}));
 
 }
 
