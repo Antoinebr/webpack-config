@@ -28,11 +28,12 @@ document.querySelector('button').addEventListener('click', function (e) {
 	e.preventDefault();
 
 
-	import('lodash').then(_ => {
+	import('lodash/camelCase').then(camelCase => {
 
+		
 		let element = document.createElement('h3');
 		element.classList.add('txt-Center')
-		element.innerHTML = _.camelCase("Hello Friends this sentance have been camecased");
+		element.innerHTML = camelCase.default("Hello Friends this sentance have been camecased");
 		document.body.appendChild(element);
 
 	});

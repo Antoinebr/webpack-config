@@ -10,7 +10,6 @@
 
 
 
-
 body {
     padding: 2%;
     background: url('./pattern.svg');
@@ -32,6 +31,10 @@ button {
     background-color: #4EAAC6;
     font-size: 15px;
     color: #FFF;
+
+    &:hover{
+        cursor : pointer;
+    }
 }
 
 

@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/runtime": "^7.1.2",
     "autoprefixer": "^9.1.5",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
@@ -35,6 +36,7 @@
     "style-loader": "^0.23.1",
     "url-loader": "^1.1.2",
     "webpack": "^4.20.2",
+    "webpack-bundle-analyzer": "^3.0.3",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.9",
     "webpack-manifest-plugin": "^2.0.4"

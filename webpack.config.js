@@ -6,11 +6,11 @@ const ManifestPlugin = require('webpack-manifest-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const config = {
     mode: dev ? "development" : "production",
-  
+
     // dev server used in developement 
     // see npm script : webpack-dev-server --open --hot --port 7656
     devServer: {
@@ -44,7 +44,7 @@ const config = {
     },
 
     devtool: dev ? "cheap-module-eval-source-map" : false, // generate a sourcemap for for dev only
-    
+
     module: {
 
         rules: [
@@ -61,7 +61,11 @@ const config = {
                 query: {
                     // it's important to set modules: false
                     // otherwise ES2017 import / export are converted to require() (common js syntax)
-                    presets: [ ["env", { modules: false } ], "stage-0"] 
+                    presets: [
+                        ["env", {
+                            modules: false
+                        }], "stage-0"
+                    ]
                 }
             },
 
@@ -75,7 +79,7 @@ const config = {
                 use: [{
                         // style-loader is to apply (from js) the style we only need it in dev
                         // in production we don't want to load CSS from JS then we use MiniCssExtractPlugin.loader to generate real CSS files
-                        loader: dev ? 'style-loader' : MiniCssExtractPlugin.loader 
+                        loader: dev ? 'style-loader' : MiniCssExtractPlugin.loader
                     },
                     {
                         loader: "css-loader", // to be able to load the css files 
@@ -124,8 +128,8 @@ const config = {
                     }
                 ]
             },
-            
-            
+
+
             /*
             | 
             | URL loader 
@@ -143,7 +147,7 @@ const config = {
                     }
                 }]
             },
-            
+
 
             /*
             | 
@@ -221,7 +225,9 @@ const config = {
         // to inject the right bundle hith the hash etc... in dist
         new HtmlWebpackPlugin({
             template: "./src/index.html"
-        })
+        }),
+
+
 
 
     ]
@@ -238,6 +244,11 @@ if (!dev) {
     config.plugins.push(new CleanWebpackPlugin('dist', {}));
 
     config.plugins.push(new OptimizeCSSAssetsPlugin({}));
+
+
+    // Visualize size of webpack output files with an interactive zoomable treemap.
+    // https://github.com/webpack-contrib/webpack-bundle-analyzer
+    config.plugins.push(new BundleAnalyzerPlugin());
 
 }
 
