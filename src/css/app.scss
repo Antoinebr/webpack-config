@@ -1,104 +1,120 @@
+@charset "UTF-8";
 
+
+@import "tools/functions";
+@import "settings";
+@import "tools/mixins";
 @import "tools/clearfix";
 
-@font-face {
-    font-family: 'Pokemon';
-    src: url('../Pokemon-Classic.ttf') format('truetype');
-    font-style: normal;
-}
+// ===================================================
+// Base
+// ===================================================
+
+@import "base/normalize";
+@import "base/font-face";
+@import "base/init";
+@import "base/link";
+@import "base/list";
+@import "base/typography";
+@import "base/embed";
+@import "base/img";
+
+// @import "base/_b-form";
+// @import "base/_b-table";
+
+
+// ===================================================
+//  Layout
+// ===================================================
+
+@import "layouts/grid.scss";
 
 
 
+// ===================================================
+//  Components
+// ===================================================
 
-body {
-    padding: 2%;
-    background: url('./pattern.svg');
-    font-family: sans-serif
-}
+@import "libs/bootstrap.scss";
+@import "components/list";
+@import "components/typo";
+@import "components/msg";
+@import "components/videoWrapper";
+@import "components/archive/mini-archive";
 
-.container {
-    width: 1200px;
-    max-width: 90%;
-    display: block;
-    margin: auto;
-}
+// Menu
+@import "components/menu/_menu";
+@import "components/menu/menu-sticky";
 
-button {
-    width: 80%;
-    max-width: 300px;
-    height: 50px;
-    line-height: 50px;
-    background-color: #4EAAC6;
-    font-size: 15px;
-    color: #FFF;
+// Gallery
+@import "components/gallery/mansonry";
 
-    &:hover{
-        cursor : pointer;
-    }
-}
+// Form
+@import "components/form/_form";
+@import "components/form/_formInputSelect";
+@import "components/form/_formInputRadioCheckbox";
+@import "components/form/_formInputIcon";
+@import "components/form/_formInputState";
+@import "components/form/_formInputToggle";
+@import "components/form/formInline";
 
+// Button
+@import "components/button/_button";
+@import "components/button/_buttonIcon";
+@import "components/button/_buttonCircular";
+@import "components/button/_buttonGrouped";
+@import "components/button/_buttonDblContent.scss";
 
-.txt-Center {
-    text-align: center;
-}
+// Banner
+@import "components/banner/promo-banner";
+@import "components/banner/full-screen";
 
-.display-block{
-    margin: auto;
-    display: block;
-}
+// ===================================================
+// Utils
+// ===================================================
 
-
-.cartige {
-    h2 {
-        color: rgb(11, 1, 37);
-        font-family: 'Pokemon';
-
-        b {
-            font-weight: 500;
-            font-size: 40px;
-        }
-    }
-}
+// @import "utils/_u-layout";
+// @import "utils/_u-show-hide";
+@import "utils/spacing";
+@import "utils/text";
+@import "utils/shadows";
 
 
-.police {
 
-    #meh {
-        width: 400px;
-        display: block;
-        margin: auto;
-    }
-
-    #arm-right {
-        transform-origin: top left;
-        transform-box: fill-box;
-        animation: armMoveR 2s infinite;
-    }
-
-    #arm-left {
-        transform-origin: top right;
-        transform-box: fill-box;
-        animation: armMoveL 2s infinite;
-    }
-
-    @keyframes armMoveL {
-        0% {
-            transform: rotate(0deg)
-        }
-
-        50% {
-            transform: rotate(40deg)
-        }
-    }
+// ===================================================
+// Libs
+// ===================================================
+@import "libs/highlightjs";
 
 
-    @keyframes armMoveR {
-        0% {
-            transform: rotate(0deg)
-        }
 
-        50% {
-            transform: rotate(-40deg)
-        }
-    }
-}
+/**
+*
+*  Website
+*
+*/
+
+
+@import "website/_base";
+
+@import "website/_header";
+
+@import "website/_home";
+
+@import "website/components/animation/loader";
+
+@import "website/page/home";
+
+@import "website/components/typo";
+
+@import "website/components/form/form";
+
+@import "website/components/block-select";
+
+@import "website/components/button/button"; 
+
+
+@import "website/components/desc-card";
+
+
+

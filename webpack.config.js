@@ -49,6 +49,19 @@ const config = {
 
         rules: [
 
+
+            /*
+            | 
+            | HTML loader 
+            | 
+            | Need to work with the HtmlWebpackPlugin 
+            |
+            */
+            {
+                test: /\.html$/,
+                loader: "html-loader"
+            },
+
             /*
             | 
             | JavaScript Loader 
@@ -166,19 +179,19 @@ const config = {
                             progressive: true,
                             quality: 40
                         }),
-                        // require('imagemin-pngquant')({
-                        //     floyd: 0.5,
-                        //     speed: 2
-                        // }),
-                        // require('imagemin-svgo')({
-                        //     plugins: [{
-                        //             removeTitle: true
-                        //         },
-                        //         {
-                        //             convertPathData: false
-                        //         }
-                        //     ]
-                        // })
+                        require('imagemin-pngquant')({
+                            floyd: 0.5,
+                            speed: 2
+                        }),
+                        require('imagemin-svgo')({
+                            plugins: [{
+                                    removeTitle: true
+                                },
+                                {
+                                    convertPathData: false
+                                }
+                            ]
+                        })
                     ]
                 }
             },
@@ -195,20 +208,10 @@ const config = {
                 use: [
                     'file-loader'
                 ]
-            },
-
-
-            /*
-            | 
-            | HTML loader 
-            | 
-            | Need to work with the HtmlWebpackPlugin 
-            |
-            */
-            {
-                test: /\.html$/,
-                loader: "html-loader"
             }
+
+
+
 
         ],
 

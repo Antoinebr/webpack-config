@@ -1,0 +1,17 @@
+.banner-full-screen{
+    min-height: 100%;
+}
+
+
+.banner-full-screen h1{text-transform: initial;}
+
+
+
+@media only screen and (max-width: 768px){
+        
+    .banner-full-screen h1{
+        text-transform: initial;
+        font-size: 36px;
+    }
+
+}

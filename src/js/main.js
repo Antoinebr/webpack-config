@@ -1,12 +1,44 @@
 import css from '@css/app.scss'
-import yop from '@css/yop.css'
+
 
 import {
 	lol
 } from './lol.js';
 
 
-console.log(lol())
+
+const $codes = [...document.querySelectorAll('code')];
+
+if($codes){
+
+
+	// we dynamically import the module
+	(async () => {
+
+		// let lodashEscape = await import('lodash.escape');
+
+		// lodashEscape = lodashEscape.default;
+
+		// for( const code of $codes ){
+
+		// 	code.innerText = lodashEscape(code.innerHTML);
+		// }
+
+
+		let hljs = await import('highlight.js');
+
+		hljs = hljs.default;
+
+		hljs.initHighlightingOnLoad();
+		
+
+	})();
+
+}
+
+
+
+
 
 
 function get5() {
