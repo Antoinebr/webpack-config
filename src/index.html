@@ -13,108 +13,98 @@
 
 	<div class="container">
 
-
-		<main class="cartige">
-			<h2 class="u-txtCenter"> Welcome to <br /> <b>WebPack</b></h2>
-
-			<p class="u-txtCenter">This is Antoine's starter for webpack. Feel free to hack the config</p>
-		</main>
-
-		<!-- <img src="http://lorempicsum.com/futurama/629/200/3"> -->
-
-
 		<article class="police">
 			<svg id="meh" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250.8 326.8">
 				<style>
 					.st0 {
-						display: none;
-						fill: #181C1B;
-					}
-
-					.st1 {
-						fill: #4EAAC6;
-					}
-
-					.st2 {
-						fill: #FFC197;
-					}
-
-					.st3 {
-						fill: #054260;
-					}
-
-					.st4 {
-						fill: #266E84;
-					}
-
-					.st5 {
-						fill: #051D26;
-					}
-
-					.st6 {
-						fill: #263235;
-					}
-
-					.st7 {
-						fill: #181C1B;
-					}
-
-					.st8 {
-						fill: #FFD34C;
-					}
-
-					.st9 {
-						fill: #2C8B9B;
-					}
-
-					.st10 {
-						fill: #E59973;
-					}
-
-					.st11 {
-						fill: #FCECDE;
-					}
-
-					.st12 {
-						fill: #682311;
-					}
-
-					.st13 {
-						fill: #D86852;
-					}
-
-					.st14 {
-						fill: #140502;
-					}
-
-					.st15 {
-						fill: #F7E8D0;
-					}
-
-					.st16 {
-						fill: #0B2E3F;
-					}
-
-					.st17 {
-						fill: #182326;
-					}
-
-					.st18 {
-						fill: #8E2F16;
-					}
-
-					.st19 {
-						fill: #E27F64;
-					}
-
-					.st20 {
-						fill: #FFFFFF;
-					}
-
-					.st21 {
-						fill: #5E1E0D;
-					}
-				</style>
+								display: none;
+								fill: #181C1B;
+							}
+		
+							.st1 {
+								fill: #4EAAC6;
+							}
+		
+							.st2 {
+								fill: #FFC197;
+							}
+		
+							.st3 {
+								fill: #054260;
+							}
+		
+							.st4 {
+								fill: #266E84;
+							}
+		
+							.st5 {
+								fill: #051D26;
+							}
+		
+							.st6 {
+								fill: #263235;
+							}
+		
+							.st7 {
+								fill: #181C1B;
+							}
+		
+							.st8 {
+								fill: #FFD34C;
+							}
+		
+							.st9 {
+								fill: #2C8B9B;
+							}
+		
+							.st10 {
+								fill: #E59973;
+							}
+		
+							.st11 {
+								fill: #FCECDE;
+							}
+		
+							.st12 {
+								fill: #682311;
+							}
+		
+							.st13 {
+								fill: #D86852;
+							}
+		
+							.st14 {
+								fill: #140502;
+							}
+		
+							.st15 {
+								fill: #F7E8D0;
+							}
+		
+							.st16 {
+								fill: #0B2E3F;
+							}
+		
+							.st17 {
+								fill: #182326;
+							}
+		
+							.st18 {
+								fill: #8E2F16;
+							}
+		
+							.st19 {
+								fill: #E27F64;
+							}
+		
+							.st20 {
+								fill: #FFFFFF;
+							}
+		
+							.st21 {
+								fill: #5E1E0D;
+							}
+						</style>
 				<path class="st0" d="M171.6 226.7h10.2v34.8h-10.2z" />
 				<g id="arms">
 					<g id="arm-left">
@@ -171,7 +161,11 @@
 			</svg>
 		</article>
 
-		<button class="button button--block u-dbma"> Dynamically Import loadash</button>
+		<main class="cartige">
+			<h2 class="u-txtCenter"> Welcome to <br /> <b>WebPack</b></h2>
+
+			<p class="u-txtCenter">This is Antoine's starter for webpack. Feel free to hack the config</p>
+		</main>
 
 
 		<div class="container entry-content">
@@ -205,10 +199,13 @@
 					<a href="#" class="button button--big"> I'm a big button </a>
 
 					<br /><br />
-					<a href="#" class="button button--block "> I'm a button with a block display </a>
+					<a href="#" class="button button--block"> I'm a button with a block display </a>
 
 					<br /><br />
 					<a href="#" class="button button--circular "> I'm circular button </a>
+
+					<br /><br />
+					<button class="button" disabled> I'm a disabled button </button>
 
 					<br /></br />
 
@@ -281,78 +278,46 @@
 
 					<h2>Form</h2>
 
-					<!-- <form>
+					<form>
 
-						<div class="form-group form-input">
+						<div class="form-group">
 							<label class="form-label">Name</label>
-							<input type="text" placeholder="your name">
+							<input class="form-input" type="text" placeholder="your name">
 						</div>
 
-						<div class="form-group form-input">
+						<div class="form-group">
 							<label class="form-label form-label--required">Name required</label>
-							<input type="text" placeholder="your name">
+							<input class="form-input" type="text" placeholder="your name">
 						</div>
 
-						<div class="form-group form-input">
-							<small>
-								<label class="form-label form-label--required">Name small</label>
-								<input type="text" placeholder="your name">
-							</small>
+						<div class="form-group">	
+							<label class="form-label form-label--required">Name small</label>
+							<input class="form-input" type="text" placeholder="your name">
 						</div>
 
 						<button class="button"> Send </button>
-					</form> -->
+					</form>
 
 
 					<hr class="u-mtm u-mbm" />
 
 
-					<h2> Grids </h2>
+					<h3>Shadows</h3>
 
 
+					<div class="u-shadow" style="display: inline-block;height: 200px;width: 200px;background-color: #FFF; line-height: 200px; text-align: center;">
+						<p>u-shadow</p>
+					</div>
 
-					<section class="top-container">
-						<header class="showcase">
-							<h4>Block showcase</h4>
-							<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus ut voluptatibus placeat
-								nemo
-								ipsam repudiandae?</p>
-							<a href="#" class="button">Read More</a>
-						</header>
-
-						<div class="top-box top-box-a">
-							<h3>Membership</h3>
-							<p class="price">$199/More</p>
-							<a href="#" class="button">Buy now</a>
-						</div>
-
-						<div class="top-box top-box-b">
-							<h3>ProMembership</h3>
-							<p class="price">$299/More</p>
-							<a href="#" class="button">Buy now</a>
-						</div>
-
-					</section>
-					<!--top-container-->
-
-<pre>
-	<code class="css">
-		CSS cxample of grid hould be there :p 
-	</code>
-</pre>
-
+					<div class="u-shadowM" style="display: inline-block;height: 200px;width: 200px;background-color: #FFF;margin-left:7%;line-height: 200px; text-align: center;">
+						<p>u-shadowM</p>
+					</div>
 
 
 
 				</div> <!-- col-md-12 -->
 			</div> <!-- row -->
 		</div> <!-- container -->
-
-		<section class="banner-promo clearfix">
-			<p class="txtXL">Hello world , i'm a promo banner !</p>
-		</section>
-
-
 
 
 	</div> <!-- container -->

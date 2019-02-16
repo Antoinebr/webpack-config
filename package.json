@@ -39,14 +39,9 @@
     "webpack": "^4.20.2",
     "webpack-bundle-analyzer": "^3.0.3",
     "webpack-cli": "^3.1.2",
-<<<<<<< HEAD
     "webpack-dev-server": "^3.1.9",
     "webpack-manifest-plugin": "^2.0.4",
     "imagemin-svgo": "^7.0.0"
-=======
-    "webpack-dev-server": "^3.1.14",
-    "webpack-manifest-plugin": "^2.0.4"
->>>>>>> 38a76c2dfde66abbb9ee33948f214bc6a7a2cef1
   },
   "dependencies": {
     "highlight.js": "^9.14.2",

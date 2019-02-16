@@ -15,14 +15,26 @@ if($codes){
 	// we dynamically import the module
 	(async () => {
 
-		// let lodashEscape = await import('lodash.escape');
+		let lodashEscape = await import('lodash.escape');
 
-		// lodashEscape = lodashEscape.default;
+		lodashEscape = lodashEscape.default;
 
-		// for( const code of $codes ){
+		for( const code of $codes ){
 
-		// 	code.innerText = lodashEscape(code.innerHTML);
-		// }
+			console.log( lodashEscape(`
+		
+			<section class="portfolio">
+				<img src="http://source.unsplash.com/random/201x200" alt="">
+				<img src="http://source.unsplash.com/random/202x200" alt="">
+				<img src="http://source.unsplash.com/random/203x200" alt="">
+				<img src="http://source.unsplash.com/random/204x200" alt="">
+				<img src="http://source.unsplash.com/random/205x200" alt="">
+				<img src="http://source.unsplash.com/random/206x200" alt="">
+				<img src="http://source.unsplash.com/random/207x200" alt="">
+				<img src="http://source.unsplash.com/random/208x200" alt="">
+			</section>
+			`) );
+		}
 
 
 		let hljs = await import('highlight.js');

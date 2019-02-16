@@ -20,7 +20,7 @@
 .showcase {
     grid-area: showcase;
     min-height: 400px;
-    background: url(https://images.pexels.com/photos/146631/pexels-photo-146631.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+    background: var(--primary);
     background-size: cover;
     background-position: center;
     padding: 3rem;
@@ -31,18 +31,6 @@
     box-shadow: var(--shadow);
 }
 
-.showcase h1 {
-    font-size: 4rem;
-    margin-bottom: 0;
-    color: var(--light);
-}
-
-
-.showcase p {
-    font-size: 1rem;
-    margin-top: 0;
-    color: var(--light);
-}
 
 /* Top box */
 
@@ -81,11 +69,6 @@
 
 @media(max-width: 700px) {
 
-    body {
-        margin: 10px 10px;
-
-    }
-
     .top-container {
         grid-template-areas:
             'showcase showcase'
@@ -96,19 +79,6 @@
         font-size: 2.5rem;
     }
 
-    .main-nav ul {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .info {
-        grid-template-columns: 1fr;
-    }
-
-    .info .btn {
-        display: block;
-        text-align: center;
-        margin: auto;
-    }
 }
 
 
@@ -122,3 +92,6 @@
 
 
 }
+
+
+

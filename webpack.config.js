@@ -231,6 +231,16 @@ const config = {
         }),
 
 
+        // for demo purpose 
+        new HtmlWebpackPlugin({
+            filename: 'grid.html',
+            template: "./src/grid.html"
+        }),
+        // for demo purpose 
+        // new HtmlWebpackPlugin({
+        //     filename: 'gallery.html',
+        //     template: "./src/gallery.html"
+        // })
 
 
     ]
