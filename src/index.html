@@ -176,6 +176,9 @@
 
 					<h2> Components </h2>
 
+					<a href="/typo.html" class="u-mrm">See the typos</a>
+					<a href="/grid.html" class="u-mrm">See the grid</a>
+
 					<hr class="u-mtm u-mbm" />
 
 					<h3> Buttons </h3>
@@ -222,7 +225,7 @@
 					<hr class="u-mtm u-mbm" />
 
 
-					<h2> Message </h2>
+					<h3> Message </h3>
 
 					<div class="msg">
 						<div class="msg-title"> I'm a msg </div>
@@ -244,39 +247,12 @@
 						I'm the message himslef : Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
 					</div>
 
-					<hr class="u-mtm u-mbm" />
 
-					<h2>List</h2>
-
-					<ul>
-						<li>I'm a normal list</li>
-						<li>I'm a normal list</li>
-						<li>I'm a normal list</li>
-						<li>I'm a normal list</li>
-					</ul>
-
-					<br />
-
-					<ul class="listReset">
-						<li>I'm a reseted list</li>
-						<li>I'm a reseted list</li>
-						<li>I'm a reseted list</li>
-						<li>I'm a reseted list</li>
-					</ul>
-
-					<br />
-
-					<ul class="listInline">
-						<li>I'm a inline list</li>
-						<li>I'm a inline list</li>
-						<li>I'm a inline list</li>
-						<li>I'm a inline list</li>
-					</ul>
 
 					<hr class="u-mtm u-mbm" />
 
 
-					<h2>Form</h2>
+					<h3>Form</h3>
 
 					<form>
 
@@ -290,7 +266,7 @@
 							<input class="form-input" type="text" placeholder="your name">
 						</div>
 
-						<div class="form-group">	
+						<div class="form-group">
 							<label class="form-label form-label--required">Name small</label>
 							<input class="form-input" type="text" placeholder="your name">
 						</div>
@@ -309,10 +285,76 @@
 						<p>u-shadow</p>
 					</div>
 
+					<div class="u-shadowS" style="display: inline-block;height: 200px;width: 200px;background-color: #FFF; line-height: 200px; ;margin-left:7%; text-align: center;">
+						<p>u-shadowS</p>
+					</div>
+
 					<div class="u-shadowM" style="display: inline-block;height: 200px;width: 200px;background-color: #FFF;margin-left:7%;line-height: 200px; text-align: center;">
 						<p>u-shadowM</p>
 					</div>
 
+					<hr class="u-mtm u-mbm" />
+
+					<h3>Spinner</h3>
+
+					<svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+						<circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+					</svg>
+
+
+					<hr class="u-mtm u-mbm" />
+
+
+					<h3>Cards</h3>
+
+					<section class="cards-section">
+
+						<article class="card">
+							<div class="card-container u-shadow">
+								<div class="img-container">
+									<img class="img-responsive" src="http://localhost:3998/src/img/photo.jpeg">
+								</div>
+								<div class="content-container">
+									<h4>Le titre </h4>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+								</div>
+							</div>
+						</article>
+
+						<article class="card">
+							<div class="card-container u-shadow">
+								<div class="img-container">
+									<img class="img-responsive" src="http://localhost:3998/src/img/photo.jpeg">
+								</div>
+								<div class="content-container">
+									<h4>Le titre </h4>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+								</div>
+							</div>
+						</article>
+
+						<article class="card">
+							<div class="card-container u-shadow">
+								<div class="img-container">
+									<img class="img-responsive" src="http://localhost:3998/src/img/photo.jpeg">
+								</div>
+								<div class="content-container">
+									<h4>Le titre </h4>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+								</div>
+							</div>
+						</article>
+
+					</section>
+
+
+					<style>
+						.cards-section {
+							display: grid;
+							grid-gap: 20px;
+							grid-template-columns: repeat(4, 1fr);
+						}
+					</style>
 
 
 				</div> <!-- col-md-12 -->

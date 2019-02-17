@@ -237,10 +237,10 @@ const config = {
             template: "./src/grid.html"
         }),
         // for demo purpose 
-        // new HtmlWebpackPlugin({
-        //     filename: 'gallery.html',
-        //     template: "./src/gallery.html"
-        // })
+        new HtmlWebpackPlugin({
+            filename: 'typo.html',
+            template: "./src/typo.html"
+        })
 
 
     ]

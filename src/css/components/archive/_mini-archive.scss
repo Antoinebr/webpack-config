@@ -1,78 +1,54 @@
-.mini-archive{
-	// Anim btn CTA
-	.bouton-slide{
-		position: relative;
-		transition: top 0.4s, background-color 0.4s;
-		top: 300px;
-		margin: 10px;
-		background-color: rgba(255, 255, 255, 0.93);
-		&:hover{
-			background-color: #FFF;
-		}
-	}
+.card{
 
-	.img-container:hover .bouton-slide{
-		top: -80px;
-	}
-	// Anim btn CTA
-
-
-	article{
-		margin-bottom: 30px;
-	}
-
-	.article-container{
-		border: solid 1px rgba(120, 120, 120, 0.18);
+	.card-container{
+		background-color: #FFF;
 		display: block;
 		margin: auto;
 		height: 480px;
-		transition: box-shadow .25s;
+		position: relative;
 
 		.img-container{
 			max-width: 400px;
 			height: 300px;
 			overflow: hidden;
 			transition: top 10s;
+			position: relative;
+
+
+			&::before {
+				display: block;
+				content: '';
+				position: absolute;
+				height: 100%;
+				width: 100%;
+				top: 0;
+				right: 0;
+				background: linear-gradient(45deg, #05b3d6 0%, rgba(5, 179, 214, 0) 70%), linear-gradient(135deg, #0958ec 10%, rgba(9, 88, 236, 0) 80%), linear-gradient(225deg, #d209ec 10%, rgba(210, 9, 236, 0) 80%), linear-gradient(315deg, #05e129 100%, rgba(5, 225, 41, 0) 70%);
+				opacity: 0.6;
+				z-index: 1;
+			}
+
+
 			img{
 				min-height: 300px;
 				width: auto;
-				@include transition-duration(0.3s);
+				width: 100%;
+				top: 0;
+				right: 0;
+				position: absolute;
+				left: 0;
+				object-fit: cover;
 			}
-		}
-
-
-		.title{
-			color: #000;
-			font-size: 16px;
-			font-weight: 400;
-			line-height: 22px;
-			font-family: 'Biryani', sans-serif;
-			text-transform: uppercase;
-			margin-bottom: 5px;
-			text-align: center;
-		}
-
-		.desc{
-			margin-top: 0px;
-			font-size: 12px;
-			text-align: center;
 		}
 
 
 
 		.content-container{
 			padding: 20px;
-			.excerpt{font-size: 13px;font-style: italic;}
+			
 		}
 
-		&:hover{
-			img{
-				@include transition-duration(0.3s);
-				//@include scale(1.2);
-			}
-
-			box-shadow: 0 8px 17px 0 rgba(0,0,0,.2),0 6px 20px 0 rgba(0,0,0,.19);
-		}
+	
 
 	}
 }
@@ -80,9 +56,9 @@
 
 @media only screen and (max-width: 1199px){
 
-	.mini-archive{
+	.card{
 		article{margin-bottom: 30px;}
-		.article-container{
+		.card-container{
 			height: 480px;
 		}
 	}
@@ -90,8 +66,8 @@
 }
 
 @media only screen and (max-width: 768px){
-	.mini-archive{
-		.article-container{
+	.card{
+		.card-container{
 			max-width: 350px;
 		}
 	}
