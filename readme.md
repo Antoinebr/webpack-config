@@ -64,3 +64,29 @@ import yop from '@css/yop.css'
 
 If the image size is lower than 8192 bits we will return a DataURL (base64) if the file is smaller than a byte limit.
 Otherwise we use the [imagemin plugins](https://www.npmjs.com/search?q=keywords:imageminplugin)
+
+
+## Images path
+
+Images should go to ```src/img/```
+
+```
+  |- /src
+    |- /img
+        |- photo.jpeg
+        |- raccoon.png
+```
+
+In the HTML we can reference our images like so :
+
+```html
+<img src="/img/photo.jpeg">
+```
+
+In our CSS 
+
+```CSS
+body{
+    background: url('../img/raccoon.png');
+}
+```

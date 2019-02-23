@@ -15,7 +15,7 @@
 @import "base/init";
 @import "base/link";
 @import "base/list";
-@import "base/typography";
+@import  "base/typography";
 @import "base/embed";
 @import "base/img";
 
@@ -94,27 +94,15 @@
 *  Website
 *
 */
-
-
 @import "website/_base";
-
 @import "website/_header";
-
 @import "website/_home";
-
 @import "website/components/animation/loader";
-
 @import "website/page/home";
-
 @import "website/components/typo";
-
 @import "website/components/form/form";
-
 @import "website/components/block-select";
-
 @import "website/components/button/button"; 
-
-
 @import "website/components/desc-card";
 
 

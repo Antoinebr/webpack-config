@@ -31,7 +31,7 @@ const config = {
     },
     output: {
         path: path.resolve(__dirname, 'dist'), // the folder where we will output 
-        filename: 'app.bundle.[hash].js' // the file name with the hash at the end 
+        filename: 'app.bundle.[hash].js', // the file name with the hash at the end 
     },
     resolve: {
 
@@ -231,12 +231,12 @@ const config = {
         }),
 
 
-        // for demo purpose 
+        // for demo purpose it should be removed for prod
         new HtmlWebpackPlugin({
             filename: 'grid.html',
             template: "./src/grid.html"
         }),
-        // for demo purpose 
+        // for demo purpose it should be removed for prod
         new HtmlWebpackPlugin({
             filename: 'typo.html',
             template: "./src/typo.html"

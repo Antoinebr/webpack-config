@@ -312,7 +312,7 @@
 						<article class="card">
 							<div class="card-container u-shadow">
 								<div class="img-container">
-									<img class="img-responsive" src="http://localhost:3998/src/img/photo.jpeg">
+									<img class="img-responsive" src="/img/photo.jpeg">
 								</div>
 								<div class="content-container">
 									<h4>Le titre </h4>
@@ -324,7 +324,7 @@
 						<article class="card">
 							<div class="card-container u-shadow">
 								<div class="img-container">
-									<img class="img-responsive" src="http://localhost:3998/src/img/photo.jpeg">
+									<img class="img-responsive" src="/img/photo.jpeg">
 								</div>
 								<div class="content-container">
 									<h4>Le titre </h4>
@@ -336,7 +336,7 @@
 						<article class="card">
 							<div class="card-container u-shadow">
 								<div class="img-container">
-									<img class="img-responsive" src="http://localhost:3998/src/img/photo.jpeg">
+									<img class="img-responsive" src="/img/photo.jpeg">
 								</div>
 								<div class="content-container">
 									<h4>Le titre </h4>
@@ -354,6 +354,14 @@
 							grid-gap: 20px;
 							grid-template-columns: repeat(4, 1fr);
 						}
+
+						@media only screen and (max-width: 768px) {
+							.cards-section {
+								grid-template-columns: repeat(2, 1fr);
+							}
+
+						}
+
 					</style>
 
 
