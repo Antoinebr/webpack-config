@@ -1,15 +1,5 @@
-export const lol = () => {
+export const lol = () => "looooooooooooool";
 
-    return "looooooooooooool";
-
-};
-
-
-export const megalol = () => {
-
-    return "megalol";
-
-};
-
+export const megalol = () => "megalol";
 
 export const tony = () => "tony232"; 

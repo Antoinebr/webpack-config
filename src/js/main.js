@@ -24,16 +24,23 @@ if ($codes) {
 		// hljs.registerLanguage('javascript', javascript);
 
 
-		let [hljs,scss] = await Promise.all([
+		let [hljs,scss,xml,css] = await Promise.all([
 			import('highlight.js/lib/highlight'),
-			import('highlight.js/lib/languages/scss')
+			import('highlight.js/lib/languages/scss'),
+			import('highlight.js/lib/languages/xml'),
+			import('highlight.js/lib/languages/css')
 		]).catch(console.log)
 	
 
 		hljs = hljs.default;
 		scss = scss.default;
+		xml = xml.default;
+		css = css.default;
+
 
 		hljs.registerLanguage('scss', scss);
+		hljs.registerLanguage('xml', xml);
+		hljs.registerLanguage('css', css);
 		hljs.initHighlightingOnLoad();
 
 	})();
@@ -45,9 +52,7 @@ if ($codes) {
 
 
 
-function get5() {
-	return new Promise((resolve, reject) => resolve(5));
-}
+const get5 = () => new Promise((resolve, reject) => resolve(5));
 
 
 (async () => {
@@ -58,19 +63,3 @@ function get5() {
 
 })();
 
-
-document.querySelector('button').addEventListener('click', function (e) {
-
-	e.preventDefault();
-
-
-	import('lodash/camelCase').then(camelCase => {
-
-		let element = document.createElement('h3');
-		element.classList.add('txt-Center')
-		element.innerHTML = camelCase.default("Hello Friends this sentance have been camecased");
-		document.body.appendChild(element);
-
-	});
-
-});
