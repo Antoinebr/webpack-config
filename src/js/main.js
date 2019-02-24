@@ -7,42 +7,34 @@ import {
 
 
 
+
+
+
 const $codes = [...document.querySelectorAll('code')];
 
-if($codes){
+if ($codes) {
 
 
 	// we dynamically import the module
 	(async () => {
 
-		let lodashEscape = await import('lodash.escape');
 
-		lodashEscape = lodashEscape.default;
-
-		for( const code of $codes ){
-
-			console.log( lodashEscape(`
-		
-			<section class="portfolio">
-				<img src="http://source.unsplash.com/random/201x200" alt="">
-				<img src="http://source.unsplash.com/random/202x200" alt="">
-				<img src="http://source.unsplash.com/random/203x200" alt="">
-				<img src="http://source.unsplash.com/random/204x200" alt="">
-				<img src="http://source.unsplash.com/random/205x200" alt="">
-				<img src="http://source.unsplash.com/random/206x200" alt="">
-				<img src="http://source.unsplash.com/random/207x200" alt="">
-				<img src="http://source.unsplash.com/random/208x200" alt="">
-			</section>
-			`) );
-		}
+		// import hljs from 'highlight.js/lib/highlight';
+		// import javascript from 'highlight.js/lib/languages/javascript';
+		// hljs.registerLanguage('javascript', javascript);
 
 
-		let hljs = await import('highlight.js');
+		let [hljs,scss] = await Promise.all([
+			import('highlight.js/lib/highlight'),
+			import('highlight.js/lib/languages/scss')
+		]).catch(console.log)
+	
 
 		hljs = hljs.default;
+		scss = scss.default;
 
+		hljs.registerLanguage('scss', scss);
 		hljs.initHighlightingOnLoad();
-		
 
 	})();
 
@@ -74,7 +66,6 @@ document.querySelector('button').addEventListener('click', function (e) {
 
 	import('lodash/camelCase').then(camelCase => {
 
-		
 		let element = document.createElement('h3');
 		element.classList.add('txt-Center')
 		element.innerHTML = camelCase.default("Hello Friends this sentance have been camecased");

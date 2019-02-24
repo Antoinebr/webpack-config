@@ -11,7 +11,17 @@
 
 <body>
 
-	<div class="container">
+	<nav class="u-shadow">
+		<div class="container">
+			<ul class="listInline u-txtCenter">
+				<li><a href="/" class="u-mrm">Home</a></li>
+				<li><a href="/typo.html" class="u-mrm">See the typos</a></li>
+				<li><a href="/grid.html" class="u-mrm">See the grid</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="container u-ptm">
 
 		<article class="police">
 			<svg id="meh" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250.8 326.8">
@@ -162,7 +172,7 @@
 		</article>
 
 		<main class="cartige">
-			<h2 class="u-txtCenter"> Welcome to <br /> <b>WebPack</b></h2>
+			<h2 class="u-txtCenter title-hero u-shadow"> Welcome to <br /> <b>WebPack</b></h2>
 
 			<p class="u-txtCenter">This is Antoine's starter for webpack. Feel free to hack the config</p>
 		</main>
@@ -176,8 +186,7 @@
 
 					<h2> Components </h2>
 
-					<a href="/typo.html" class="u-mrm">See the typos</a>
-					<a href="/grid.html" class="u-mrm">See the grid</a>
+					<p> Few components I created to speed-up dev :)</p>
 
 					<hr class="u-mtm u-mbm" />
 
@@ -307,7 +316,7 @@
 
 					<h3>Cards</h3>
 
-					<section class="cards-section">
+					<section class="cards-section u-mbl">
 
 						<article class="card">
 							<div class="card-container u-shadow">
@@ -332,6 +341,19 @@
 								</div>
 							</div>
 						</article>
+
+						<article class="card">
+							<div class="card-container u-shadow">
+								<div class="img-container">
+									<img class="img-responsive" src="/img/photo.jpeg">
+								</div>
+								<div class="content-container">
+									<h4>Le titre </h4>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+								</div>
+							</div>
+						</article>
+
 
 						<article class="card">
 							<div class="card-container u-shadow">
@@ -352,16 +374,15 @@
 						.cards-section {
 							display: grid;
 							grid-gap: 20px;
-							grid-template-columns: repeat(4, 1fr);
+							grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 						}
 
-						@media only screen and (max-width: 768px) {
+						/* @media only screen and (max-width: 768px) {
 							.cards-section {
 								grid-template-columns: repeat(2, 1fr);
 							}
 
-						}
-
+						} */
 					</style>
 
 

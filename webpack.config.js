@@ -130,7 +130,8 @@ const config = {
                                 require('autoprefixer')({
                                     browsers: ['last 2 versions', 'ie > 8']
                                 })
-                            ]
+                            ],
+                            sourceMap: true
                         }
                     },
                     {

@@ -4,7 +4,7 @@
 		background-color: #FFF;
 		display: block;
 		margin: auto;
-		height: 480px;
+		min-height: 480px;
 		position: relative;
 
 		.img-container{
@@ -41,8 +41,6 @@
 			}
 		}
 
-
-
 		.content-container{
 			padding: 20px;
 			
@@ -59,7 +57,7 @@
 	.card{
 		article{margin-bottom: 30px;}
 		.card-container{
-			height: 480px;
+			// height: 480px;
 		}
 	}
 
