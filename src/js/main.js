@@ -2,11 +2,8 @@ import css from '@css/app.scss'
 
 
 import {
-	lol
-} from './lol.js';
-
-
-
+	sayHiLaterOn
+} from './myModule.js';
 
 
 
@@ -14,15 +11,8 @@ const $codes = [...document.querySelectorAll('code')];
 
 if ($codes) {
 
-
 	// we dynamically import the module
 	(async () => {
-
-
-		// import hljs from 'highlight.js/lib/highlight';
-		// import javascript from 'highlight.js/lib/languages/javascript';
-		// hljs.registerLanguage('javascript', javascript);
-
 
 		let [hljs,scss,xml,css] = await Promise.all([
 			import('highlight.js/lib/highlight'),
@@ -48,16 +38,18 @@ if ($codes) {
 }
 
 
+document.querySelector('form button').addEventListener('click', function(e){
 
+	e.preventDefault();
 
+	console.log("click");
+});
 
-
-const get5 = () => new Promise((resolve, reject) => resolve(5));
 
 
 (async () => {
 
-	let resp = await get5();
+	let resp = await sayHiLaterOn(4000);
 
 	console.log(resp);
 
