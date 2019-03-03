@@ -23,7 +23,7 @@
   -webkit-user-drag: none;
   user-select: none;
   -webkit-appearance: none;
-  max-width: 400px;
+  width: fit-content;
 }
 
 /**
@@ -64,25 +64,21 @@
 .button--big {
   padding: 0.9em; 
   font-size: 1.125em;
-  max-width: 30%;
 }
 
 @media only screen and (max-width: 768px){
   	.button--big{
-      max-width: 80%;
       font-size: 0.9em;
     }
 }
 
 .button--block {
   display: block;
-  width: 100%;
 }
 
 .button--blockMobile {
   @media (max-width: $mq-s-up) {
     display: block;
-    width: 100%;
   }
 }
 
