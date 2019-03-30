@@ -1,61 +1,57 @@
 import css from '@css/app.scss'
 
-const $form = document.querySelector('form');
 
-$form.addEventListener('submit', async function(e){
+import {
+	sayHiLaterOn
+} from './myModule.js';
+
+
+
+const $codes = [...document.querySelectorAll('code')];
+
+if ($codes) {
+
+	// we dynamically import the module
+	(async () => {
+
+		let [hljs,scss,xml,css] = await Promise.all([
+			import('highlight.js/lib/highlight'),
+			import('highlight.js/lib/languages/scss'),
+			import('highlight.js/lib/languages/xml'),
+			import('highlight.js/lib/languages/css')
+		]).catch(console.log)
+	
+
+		hljs = hljs.default;
+		scss = scss.default;
+		xml = xml.default;
+		css = css.default;
+
+
+		hljs.registerLanguage('scss', scss);
+		hljs.registerLanguage('xml', xml);
+		hljs.registerLanguage('css', css);
+		hljs.initHighlightingOnLoad();
+
+	})();
+
+}
+
+
+document.querySelector('form button').addEventListener('click', function(e){
 
 	e.preventDefault();
 
-	let [smoothScroll,validator] = await Promise.all([import('scroll-to-element'),import('validator')]);
-
-	smoothScroll = smoothScroll.default;
-
-
-	if( ! validator.isURL(this.cannonicalURL.value) ){
-
-		alert('The Cannonical URL is not a valid URL');
-		return false;
-	}
-
-	if( ! validator.isURL(this.ampURL.value) ){
-		alert('The AMP URL is not a valid URL');
-		return false;
-	}
-
-
-	const $iframeContainer = document.querySelector('.iframe-container');
-	
-	$iframeContainer.innerHTML = `
-
-	<h2 class="cannonical"> Cannonical </h2> 
-				
-	<h2 class="amp"> AMP </h2>
-
-	<iframe class="u-shadowS" width="412" height="12000" src="${this.cannonicalURL.value}" frameborder="0"></iframe>
-	
-	<iframe class="u-shadowS" width="412" height="12000" src="${this.ampURL.value}" frameborder="0"></iframe>
-	
-	`;
-	
-	smoothScroll('.iframe-container', {
-		offset: -200,
-		duration: 700
-	});
-
-
-	window.location.hash = `${this.cannonicalURL.value}[-vs-]${this.ampURL.value}`; 
-
-
+	console.log("click");
 });
 
 
-if(window.location.hash !== "" &&  window.location.hash.includes('[-vs-]')){
 
-	const [cannonicalURL, ampURL] = window.location.hash.replace("#","").split('[-vs-]');
+(async () => {
 
-	$form.cannonicalURL.value = cannonicalURL;
-	$form.ampURL.value = ampURL;
+	let resp = await sayHiLaterOn(4000);
 
-	document.querySelector('form button').click();
+	console.log(resp);
 
-}
+})();
+
