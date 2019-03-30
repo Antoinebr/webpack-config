@@ -20,7 +20,7 @@ $clr-0         : #FFF;
 $clr-0-light   : #ddd;
 $clr-0-lighten : #fafafa;
 
-$clr-1         : #4eaac6;
+$clr-1         : #0079c4;
 $clr-1-light   : tint($clr-1, 50%);
 $clr-1-lighten : tint($clr-1, 85%);
 $clr-1-dark    : shade($clr-1, 15%);
@@ -43,14 +43,14 @@ $pinterest   : #bd081c;
 
 
 
-$base-font-family   : 'Lato', 'Helvetica Neue', Helvetica, sans-serif;
+$base-font-family   : 'Work Sans Light', sans-serif;
 $code-font          : 'Source Code Pro', Consolas, monospace;
 $base-font-size     : 1em;
 $base-line-height   : 1.625em;
 $base-font-color    : $clr-0-dark;
 
 // Headings h1,h2,h3...
-$header-font-family : 'Pokemon','Helvetica Neue', Helvetica, sans-serif;
+$header-font-family : "Work Sans SemiBold", sans-serif;
 $header-line-height : 1.25em;
 $header-font-color  : $clr-0-dark;
 

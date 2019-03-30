@@ -1,30 +1,60 @@
-.banner-full-screen{
-    min-height: 100%;
+form{
+    width: 70%;
 }
 
-
-.banner-full-screen h1{text-transform: initial;}
-
-
+.form-input{
+    width: 100%;
+}
 
 @media only screen and (max-width: 768px){
-        
-    .banner-full-screen h1{
-        text-transform: initial;
-        font-size: 36px;
+    	
+    form{
+        width: 100%;
     }
-
 }
 
 
-.title-hero{
-    transform: skew(0, -3deg);
-    background-color: $clr-1;
-    line-height: 1.4;
-    color: #FFF;
-    width: 50%;
+
+h2.cannonical::after{
+	background-color: #d62e2f;
+}
+
+h2.amp::after{
+	background-color: $clr-1;
+}
+
+.iframe-container{
+    display: grid;
+    grid-gap: 20px;
+    width: 80%;
+    grid-template-areas:
+    'h2-cannonical h2-amp'
+    'iframe-cannonical iframe-amp';
+}
+
+.iframe-container h2{
+    text-align: center;
     display: block;
     margin: auto;
-    min-width: 233px;
-    padding: 15px;
+}
+
+.iframe-container iframe{
+    display: block;
+    margin: auto;
+}
+
+.iframe-container h2.cannonical{
+    grid-area: h2-cannonical;
+}
+
+.iframe-container h2.amp{
+    grid-area: h2-amp;
+}
+
+.iframe-container iframe.cannonical{
+    grid-area: iframe-cannonical;
+}
+
+.iframe-container iframe.amp{
+    grid-area: iframe-amp;
 }

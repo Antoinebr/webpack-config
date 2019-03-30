@@ -27,7 +27,7 @@ const config = {
     entry: {
         // entry : where the APP starts 
         // babel-plyfill transpile async - await... to ES5 ( without generatos will be missing)
-        app: ['babel-polyfill', './src/js/main.js'],
+        app: ['./src/js/main.js'],
     },
     output: {
         path: path.resolve(__dirname, 'dist'), // the folder where we will output 
@@ -62,25 +62,7 @@ const config = {
                 loader: "html-loader"
             },
 
-            /*
-            | 
-            | JavaScript Loader 
-            |
-            */
-            {
-                test: /\.js?$/,
-                exclude: /node_modules/,
-                loader: 'babel-loader',
-                query: {
-                    // it's important to set modules: false
-                    // otherwise ES2017 import / export are converted to require() (common js syntax)
-                    presets: [
-                        ["env", {
-                            modules: false
-                        }], "stage-0"
-                    ]
-                }
-            },
+           
 
             /*
             | 
@@ -149,7 +131,7 @@ const config = {
             | URL loader 
             |
             | works like file-loader, but can return a DataURL (base64) if the file is smaller than a byte limit.
-            |
+            | 
             */
             {
                 test: /\.(png|jpg|gif|svg)$/i,
@@ -229,21 +211,8 @@ const config = {
         // to inject the right bundle hith the hash etc... in dist
         new HtmlWebpackPlugin({
             template: "./src/index.html"
-        }),
-
-
-        // for demo purpose it should be removed for prod
-        new HtmlWebpackPlugin({
-            filename: 'grid.html',
-            template: "./src/grid.html"
-        }),
-        // for demo purpose it should be removed for prod
-        new HtmlWebpackPlugin({
-            filename: 'typo.html',
-            template: "./src/typo.html"
         })
-
-
+        
     ]
 };
 

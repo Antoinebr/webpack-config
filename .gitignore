@@ -13,6 +13,8 @@ yarn-error.log*
 *.sln
 .sass-cache 
 
+
 # Project specific
 
 dist/
+*.sketch
