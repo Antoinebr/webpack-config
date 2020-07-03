@@ -55,3 +55,21 @@ document.querySelector('form button').addEventListener('click', function(e){
 
 })();
 
+
+
+
+  // we verify that the browser is compatible with ServiceWorker fisrt 
+  if ("serviceWorker" in navigator) {
+
+    // we register the ServiceWorker 
+    navigator.serviceWorker.register("/service-worker.js").then(function(registration){
+
+      console.log("Service Worker registered with scope:", registration.scope );
+
+    }).catch(function(err) {
+
+      console.log("Service worker registration failed:", err);
+
+    });
+
+  }

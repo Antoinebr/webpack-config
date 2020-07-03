@@ -7,6 +7,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const WorkboxPlugin = require('workbox-webpack-plugin');
 
 const config = {
     mode: dev ? "development" : "production",
@@ -241,6 +242,11 @@ const config = {
         new HtmlWebpackPlugin({
             filename: 'typo.html',
             template: "./src/typo.html"
+        }),
+
+
+        new WorkboxPlugin.GenerateSW({
+            swDest: path.resolve(__dirname, 'dist', 'service-worker.js')
         })
 
 
