@@ -244,12 +244,6 @@ const config = {
             template: "./src/typo.html"
         }),
 
-
-
-
-
-
-
     
     ]
 };
@@ -266,20 +260,16 @@ if (!dev) {
 
     config.plugins.push(new OptimizeCSSAssetsPlugin({}));
 
-    
 
     config.plugins.push(
 
-     
-
         new workboxPlugin.InjectManifest({
-            exclude: ["index.html",/\.js$/], // Exlude index.html add all .js files
+            //exclude: ["index.html",/\.js$/], // Exlude index.html add all .js files from the precache
             swSrc: './src/src-sw.js', // grab the custom worbox rules 
             swDest: 'serviceworker.js'
         })
 
     );
-
 
     // Visualize size of webpack output files with an interactive zoomable treemap.
     // https://github.com/webpack-contrib/webpack-bundle-analyzer
