@@ -7,7 +7,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-const WorkboxPlugin = require('workbox-webpack-plugin');
+const workboxPlugin = require('workbox-webpack-plugin');
 
 const config = {
     mode: dev ? "development" : "production",
@@ -245,11 +245,12 @@ const config = {
         }),
 
 
-        new WorkboxPlugin.GenerateSW({
-            swDest: path.resolve(__dirname, 'dist', 'service-worker.js')
-        })
 
 
+
+
+
+    
     ]
 };
 
@@ -258,12 +259,25 @@ if (!dev) {
 
     // will create a manifest.json with the reference of the current hashes
     // Usefull when we are doing backend integration
-    config.plugins.push(new ManifestPlugin());
+    //config.plugins.push(new ManifestPlugin());
 
     // remove the dist folder at build 
     config.plugins.push(new CleanWebpackPlugin('dist', {}));
 
     config.plugins.push(new OptimizeCSSAssetsPlugin({}));
+
+    
+
+    config.plugins.push(
+
+        new workboxPlugin.GenerateSW({
+            swDest: 'serviceworker.js',
+            runtimeCaching: [{
+              urlPattern: new RegExp('https://hacker-news.firebaseio.com'),
+              handler: 'StaleWhileRevalidate'
+            }]
+        })
+    );
 
 
     // Visualize size of webpack output files with an interactive zoomable treemap.
