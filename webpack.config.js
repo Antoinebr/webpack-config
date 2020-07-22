@@ -270,19 +270,20 @@ if (!dev) {
 
     config.plugins.push(
 
-        new workboxPlugin.GenerateSW({
-            swDest: 'serviceworker.js',
-            runtimeCaching: [{
-              urlPattern: new RegExp('https://hacker-news.firebaseio.com'),
-              handler: 'StaleWhileRevalidate'
-            }]
+     
+
+        new workboxPlugin.InjectManifest({
+            exclude: ["index.html",/\.js$/], // Exlude index.html add all .js files
+            swSrc: './src/src-sw.js', // grab the custom worbox rules 
+            swDest: 'serviceworker.js'
         })
+
     );
 
 
     // Visualize size of webpack output files with an interactive zoomable treemap.
     // https://github.com/webpack-contrib/webpack-bundle-analyzer
-    config.plugins.push(new BundleAnalyzerPlugin());
+    //config.plugins.push(new BundleAnalyzerPlugin());
 
 }
 
