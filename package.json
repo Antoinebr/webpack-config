@@ -44,7 +44,7 @@
     "imagemin-svgo": "^7.0.0"
   },
   "dependencies": {
-    "highlight.js": "^9.14.2",
+    "highlight.js": "^10.4.1",
     "lodash": "^4.17.11",
     "lodash.escape": "^4.0.1",
     "workbox-webpack-plugin": "^5.1.3"
