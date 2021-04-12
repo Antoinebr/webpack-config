@@ -8,7 +8,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const workboxPlugin = require('workbox-webpack-plugin');
-const CopyPlugin = require("copy-webpack-plugin");
 
 const config = {
     mode: dev ? "development" : "production",
@@ -236,9 +235,15 @@ const config = {
 
         // for demo purpose it should be removed for prod
         new HtmlWebpackPlugin({
-            filename: 'hole.html',
-            template: "./src/hole.html"
-        })
+            filename: 'grid.html',
+            template: "./src/grid.html"
+        }),
+        // for demo purpose it should be removed for prod
+        new HtmlWebpackPlugin({
+            filename: 'typo.html',
+            template: "./src/typo.html"
+        }),
+
     
     ]
 };
@@ -259,7 +264,7 @@ if (!dev) {
     config.plugins.push(
 
         new workboxPlugin.InjectManifest({
-            exclude: [/\.DS_Store$/], // Exlude index.html add all .js files from the precache
+            //exclude: ["index.html",/\.js$/], // Exlude index.html add all .js files from the precache
             swSrc: './src/src-sw.js', // grab the custom worbox rules 
             swDest: 'serviceworker.js'
         })
@@ -269,20 +274,6 @@ if (!dev) {
     // Visualize size of webpack output files with an interactive zoomable treemap.
     // https://github.com/webpack-contrib/webpack-bundle-analyzer
     //config.plugins.push(new BundleAnalyzerPlugin());
-
-    config.plugins.push(
-        new CopyPlugin({
-            patterns: [
-              { from: "src/img", to: "img" },
-              { from: "src/manifest.json", to: "manifest.json" },
-            ],
-            options: {
-              concurrency: 100,
-            },
-          })
-    );
-   
-
 
 }
 

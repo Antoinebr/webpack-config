@@ -1,0 +1,259 @@
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+
+	<nav class="u-shadow">
+		<div class="container">
+			<ul class="listInline u-txtCenter">
+				<li><a href="/" class="u-mrm">Home</a></li>
+				<li><a href="/typo.html" class="u-mrm">See the typos</a></li>
+				<li><a href="/grid.html" class="u-mrm">See the grid</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="container">
+
+		<div class="container entry-content">
+
+			<div class="row">
+
+				<div class="col-md-12">
+
+					<h2> Grids </h2>
+
+					<section class="top-container">
+						<header class="showcase">
+							<h4>showcase</h4>
+							<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus ut voluptatibus placeat
+								nemo
+								ipsam repudiandae?</p>
+							<a href="#" class="button">Read More</a>
+						</header>
+
+						<div class="top-box top-box-a">
+							<h3>top-box-a</h3>
+							<p class="price">$199/More</p>
+							<a href="#" class="button">Buy now</a>
+						</div>
+
+						<div class="top-box top-box-b">
+							<h3>top-box-b</h3>
+							<p class="price">$299/More</p>
+							<a href="#" class="button">Buy now</a>
+						</div>
+
+					</section>
+					<!--top-container-->
+
+					<pre>
+	<code class="scss">
+.top-container {
+	display: grid;
+	grid-gap: 20px; // gap between cols                                                    
+	grid-template-areas: // name template areas                                                         
+		'showcase showcase showcase top-box-a'
+		'showcase showcase showcase top-box-b';
+} 
+
+.showcase {
+    grid-area: showcase;
+    min-height: 400px;
+	// skipped other properties 
+}
+
+
+.top-box-a {
+    grid-area: top-box-a;
+}
+
+.top-box-b {
+    grid-area: top-box-b;
+}
+
+@media(max-width: 700px) {
+
+    .top-container {
+        grid-template-areas:
+            'showcase showcase'
+            'top-box-a top-box-b';
+    }
+
+}
+
+@media(max-width: 500px) {
+    .top-container {
+        grid-template-areas:
+            'showcase'
+            'top-box-a'
+            'top-box-b';
+    }
+
+}
+	</code>
+</pre>
+
+
+					<h3>Grid : template-columns</h3>
+
+					<nav class="main-nav">
+						<ul>
+							<li><a href="#">Home</a></li>
+							<li><a href="#">Service</a></li>
+							<li><a href="#">Prices</a></li>
+							<li><a href="#">Contact</a></li>
+						</ul>
+					</nav>
+
+					<style>
+						.main-nav ul {
+							display: grid;
+							grid-gap: 20px;
+							padding: 0;
+							list-style: none;
+							grid-template-columns: repeat(4, 1fr);
+
+						}
+
+						.main-nav ul li {
+							display: inline-block;
+							height: 40px;
+							background-color: grey;
+							text-align: center;
+							line-height: 40px;
+						}
+
+						@media (max-width: 768px) {
+
+							.main-nav ul {
+								grid-template-columns: 1fr 1fr;
+							}
+
+							.main-nav ul li {
+								background-color: blue;
+							}
+						}
+					</style>
+
+
+					<pre>
+		<code  class="html">
+&lt;nav class=&quot;main-nav&quot;&gt;
+	&lt;ul&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Service&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Prices&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Contact&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/nav&gt;
+
+&lt;style&gt;
+.main-nav ul {
+	display: grid;
+	grid-gap: 20px;
+	padding: 0;
+	list-style: none;
+	grid-template-columns: repeat(4, 1fr);
+}	
+.main-nav ul li { 
+	display: inline-block;
+	height:40px;
+	background-color : grey;
+	text-align: center;
+	line-height: 40px;
+}
+
+@media (max-width: 768px){
+
+	.main-nav ul { 
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+	.main-nav ul li{
+		background-color : blue;
+	}
+}	
+&lt;/style&gt;
+
+	</code>
+</pre>
+					<h3>grid-template-columns: minmax</h3>
+
+					<section class="portfolio">
+						<img src="/img/201x200.jpeg" alt="">
+						<img src="/img/202x200.jpeg" alt="">
+						<img src="/img/203x200.jpeg" alt="">
+						<img src="/img/204x200.jpeg" alt="">
+						<img src="/img/205x200.jpeg" alt="">
+						<img src="/img/206x200.jpeg" alt="">
+						<img src="/img/207x200.jpeg" alt="">
+						<img src="/img/208x200.jpeg" alt="">
+					</section>
+
+					<style>
+						.portfolio {
+							display: grid;
+							grid-gap: 2px;
+							grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+						}
+
+						.portfolio img {
+							width: 100%;
+							box-shadow: var(--shadow);
+						}
+					</style>
+
+					<pre>
+	<code class="html">
+&lt;section class=&quot;portfolio&quot;&gt;
+	&lt;img src=&quot;http://source.unsplash.com/random/201x200&quot; alt=&quot;&quot;&gt;
+	&lt;img src=&quot;http://source.unsplash.com/random/202x200&quot; alt=&quot;&quot;&gt;
+	&lt;img src=&quot;http://source.unsplash.com/random/203x200&quot; alt=&quot;&quot;&gt;
+	&lt;img src=&quot;http://source.unsplash.com/random/204x200&quot; alt=&quot;&quot;&gt;
+	&lt;img src=&quot;http://source.unsplash.com/random/205x200&quot; alt=&quot;&quot;&gt;
+	&lt;img src=&quot;http://source.unsplash.com/random/206x200&quot; alt=&quot;&quot;&gt;
+	&lt;img src=&quot;http://source.unsplash.com/random/207x200&quot; alt=&quot;&quot;&gt;
+	&lt;img src=&quot;http://source.unsplash.com/random/208x200&quot; alt=&quot;&quot;&gt;
+&lt;/section&gt;
+	</code>
+</pre>
+
+
+					<pre>
+<code class="css">
+.portfolio {
+	display: grid;
+	grid-gap: 2px;
+	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.portfolio img {
+	width: 100%;
+	box-shadow: var(--shadow);
+}
+	</code>
+</pre>
+
+
+
+				</div> <!-- col-md-12 -->
+			</div> <!-- row -->
+		</div> <!-- container -->
+
+
+	</div> <!-- container -->
+
+</body>
+
+
+
+</html>
