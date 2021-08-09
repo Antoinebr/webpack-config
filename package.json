@@ -46,7 +46,7 @@
   "dependencies": {
     "copy-webpack-plugin": "^6.4.1",
     "highlight.js": "^9.14.2",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.21",
     "lodash.escape": "^4.0.1",
     "workbox-webpack-plugin": "^5.1.3"
   }
