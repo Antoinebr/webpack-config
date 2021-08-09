@@ -33,4 +33,10 @@ workbox.routing.registerRoute(
       ]
     })
   );
+
+
+
+workbox.routing.registerRoute(/(https:\/\/jsonplaceholder.typicode.com\/posts)/, new workbox.strategies.StaleWhileRevalidate(), 'GET');
+
+  
   

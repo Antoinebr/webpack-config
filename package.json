@@ -36,7 +36,7 @@
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "url-loader": "^1.1.2",
-    "webpack": "^4.20.2",
+    "webpack": "^4.44",
     "webpack-bundle-analyzer": "^3.0.3",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.9",
@@ -44,6 +44,7 @@
     "imagemin-svgo": "^7.0.0"
   },
   "dependencies": {
+    "copy-webpack-plugin": "^6.4.1",
     "highlight.js": "^9.14.2",
     "lodash": "^4.17.11",
     "lodash.escape": "^4.0.1",

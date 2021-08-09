@@ -8,6 +8,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const workboxPlugin = require('workbox-webpack-plugin');
+const CopyPlugin = require("copy-webpack-plugin");
 
 const config = {
     mode: dev ? "development" : "production",
@@ -262,9 +263,8 @@ if (!dev) {
 
 
     config.plugins.push(
-
         new workboxPlugin.InjectManifest({
-            //exclude: ["index.html",/\.js$/], // Exlude index.html add all .js files from the precache
+            exclude: [/\.DS_Store$/],//exclude: ["index.html",/\.js$/], // Exlude index.html add all .js files from the precache
             swSrc: './src/src-sw.js', // grab the custom worbox rules 
             swDest: 'serviceworker.js'
         })
@@ -274,6 +274,21 @@ if (!dev) {
     // Visualize size of webpack output files with an interactive zoomable treemap.
     // https://github.com/webpack-contrib/webpack-bundle-analyzer
     //config.plugins.push(new BundleAnalyzerPlugin());
+    
+    // copy the img folder to dist
+    config.plugins.push(
+        new CopyPlugin({
+            patterns: [
+              { from: "src/img", to: "img" },
+              // If PWA add a manifest.json at src/ and uncomment
+              //{ from: "src/manifest.json", to: "manifest.json" },
+            ],
+            options: {
+              concurrency: 100,
+            },
+          })
+    );
+   
 
 }
 
